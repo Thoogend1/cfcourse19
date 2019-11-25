@@ -13,10 +13,11 @@ DOES NOT CONTAIN	                        N/A
     <cfelseif myValue GREATER THAN 'IfValue'>
     <cfoutput>"Value greater than #myValue#:</cfoutput>
 <cfelse>
-    <cfoutput>"I don't know man</cfoutput>
+    <cfoutput>"I don't know man"</cfoutput>
 </cfif>
 
 <!---> The following operators are available for joined comparisons;
+Operators are ALWAYS resolved from left to right.
 CFML and CFScript Operators	                CF8+ CFScript Only
 AND                                         &&
 OR                                          ||
@@ -27,14 +28,25 @@ IMP                                         implication
 
 <!---> CFML <--->
 <cfif structKeyExists( myStruct, 'age' ) AND myStruct.age LTE 7>
-    ..code..
+    <cfoutput>"Code executed"</cfoutput>
 </cfif>
 
 <!---> CFScript <--->
 <cfscript>
     if ( structKeyExists( myStruct, 'age' ) && myStruct.age <= 7 ) {
-            ..code..
-}
+        <cfoutput>"Code executed"</cfoutput>
+        }
 </cfscript>
 
-
+<!---> Switch/case logic in ColdFusion <--->
+<cfswitch expression="#myVar#">
+    <cfcase value="1">
+        <cfoutput>"myVar value is 1"</cfoutput>
+    </cfcase>
+    <cfcase value="9,10" >
+        <cfoutput>"myVar value is 9 or 10"</cfoutput>
+    </cfcase>
+    <cfdefaultcase>
+        <cfoutput>"myVar value is not 1, 9 or 10"</cfoutput>
+    </cfdefaultcase>
+</cfswitch>

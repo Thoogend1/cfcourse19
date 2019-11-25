@@ -92,7 +92,3 @@
 <cfloop query="FruitQuery">
     #FruitQuery.Name# costs #FruitQuery.Price# <br>
 </cfloop>
-
-
-
-
