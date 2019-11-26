@@ -19,3 +19,23 @@
 <cfloop list="#myList#" index="word" delimiters=" ">
     #word#<br>
 </cfloop>
+
+<!---> Loops can also be used to populate (for example) a table through queries; <--->
+<cfscript>
+    myQuery = queryNew( "id,user" );
+    queryAddRow( myQuery );
+    querySetCell( myQuery, 'id', '1' );
+    querySetCell( myQuery, 'user', 'Jeff' );
+    queryAddRow( myQuery );
+    querySetCell( myQuery, 'id', '2' );
+    querySetCell( myQuery, 'user', 'John' );
+    queryAddRow( myQuery );
+    querySetCell( myQuery, 'id', '3' );
+    querySetCell( myQuery, 'user', 'Steve' );
+</cfscript>
+
+<cfloop query="myQuery">
+    #myQuery.id# #myQuery.user#<br>
+</cfloop>
+<!---> Will result in a table of 1 Jeff, 2 John, 3 Steve <--->
+
