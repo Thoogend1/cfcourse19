@@ -32,3 +32,24 @@
     </blockquote>
     <hr>
 </cfoutput>
+
+<!---> When inserting any information in to the datasource, always use cfqueryparam to avoid SQL injection. Like so; <--->
+<cfquery name="myQuery" datasource="cfartgallery">
+    SELECT * FROM artists
+    WHERE firstname = <cfqueryparam value="#form.name#" cfsqltype="cf_sql_varchar">
+</cfquery>
+
+<!---> A query like; <--->
+<cfquery name="myQuery" datasource="cfartgallery">
+    SELECT * FROM artists
+    WHERE artistid IN (<cfqueryparam value="#form.ids#" list="true">)
+</cfquery>
+<!---> Should result in;
+myQuery (Datasource=cfartgallery, Time=2ms, Records=4) i
+select * from ARTISTS
+where artistid in (?,?,?,?)
+Query Parameter Value(s) -
+Parameter #1(CF_SQL_CHAR) = 1
+Parameter #2(CF_SQL_CHAR) = 2
+Parameter #3(CF_SQL_CHAR) = 3
+Parameter #4(CF_SQL_CHAR) = 4   <--->
