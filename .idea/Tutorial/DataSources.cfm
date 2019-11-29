@@ -54,4 +54,28 @@ Parameter #2(CF_SQL_CHAR) = 2
 Parameter #3(CF_SQL_CHAR) = 3
 Parameter #4(CF_SQL_CHAR) = 4
 
-Queries can also be cached by adding the tag cachedwithin="#createTimespan(0,1,0,0)#" <--->
+Queries can also be cached by adding the tag cachedwithin="#createTimespan(0,1,0,0)#", or result restricted with maxrows="100" <--->
+<cfquery name="myQuery" datasource="cfartgallery" maxrows="100">
+    SELECT firstname, lastname, email FROM artists
+</cfquery>
+
+<!---> Inserting values into the database is done in a very logical way; <--->
+<cfquery result="qryResult" datasource="cfartgallery">
+    INSERT INTO art
+    (
+    artistsID, artName, description, isSold, largeImage, mediaID, price
+    )
+    VALUES
+    (
+    <cfqueryparam cfsqltype="CF_SQL_INTEGER" value="1">,
+    <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="Test Item">,
+    <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="Test Desc">,
+    <cfqueryparam cfsqltype="CF_SQL_INTEGER" value="1">,
+    <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="img.png">,
+    <cfqueryparam cfsqltype="CF_SQL_INTEGER" value="1">,
+    <cfqueryparam cfsqltype="CF_SQL_INTEGER" value="1">
+    )
+</cfquery>
+
+<cfdump var="#qryResult#">
+
