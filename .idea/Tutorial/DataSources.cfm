@@ -52,4 +52,6 @@ Query Parameter Value(s) -
 Parameter #1(CF_SQL_CHAR) = 1
 Parameter #2(CF_SQL_CHAR) = 2
 Parameter #3(CF_SQL_CHAR) = 3
-Parameter #4(CF_SQL_CHAR) = 4   <--->
+Parameter #4(CF_SQL_CHAR) = 4
+
+Queries can also be cached by adding the tag cachedwithin="#createTimespan(0,1,0,0)#" <--->
