@@ -23,7 +23,7 @@
 <cfset fullName = getFullName ( 'Dieter', 'Mateschitz' )>
 
 <!---> You can then reuse this function to pass variables to a new method, for example;
-!!!! This is not completely clear to me yet.. !!!! <--->
+!!!! This is not completely clear to me yet. It should take arguments from arguments.firstName & arguments.lastName !!!! <--->
 <cfscript>
     public string function getGreeting(
             string firstName = '',
