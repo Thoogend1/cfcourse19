@@ -1,6 +1,6 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!---> Data sources are declared in the ColdFusion admin. A simply test query; <--->
-
-
 
 // tags
 <cfquery name="myQuery" datasource="cfartgallery">

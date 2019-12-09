@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!---> Reading an XML file, then showing it's contents; <--->
 <cfset mydoc = XmlParse(ExpandPath("./order.xml"))>
 <cfdump var="#mydoc#">

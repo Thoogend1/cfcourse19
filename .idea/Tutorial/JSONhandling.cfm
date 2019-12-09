@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!---- Structure as an example of source
 <cfset myStruct = {
     items: {

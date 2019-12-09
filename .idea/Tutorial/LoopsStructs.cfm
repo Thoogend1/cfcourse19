@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!--- Looping in ColdFusion, this piece of code runs through to loop, incrementing "i" <--->
 <cfloop from="1" to="5" index="i">
     #i#<br>

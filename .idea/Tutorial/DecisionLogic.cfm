@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!--->
 CFML and CFScript Operators	                CF8+ CFScript Only
 IS, EQUAL, EQ	                            ==

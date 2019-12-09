@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!---> Include functions from other .cfm files in your script by cfincluding them to your page.
 You usually do this at the top of the page. <--->
 <cfinclude template="path/to/libraries/Functions.cfm">

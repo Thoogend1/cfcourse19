@@ -1,3 +1,5 @@
+<!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
+
 <!---> Quick example to kick off; <--->
 <cfparam name = "firstName" default = "Matt">
 <cfparam name = "lastName"  default = "Gifford">
