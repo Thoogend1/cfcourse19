@@ -1,6 +1,6 @@
 <!---> This code is not supposed to run, it is merely a quick reference guide for the subjects that have been addressed; <--->
 
-<!---> Data sources are declared in the ColdFusion admin. A simply test query; <--->
+<!---> Data sources are declared in the ColdFusion admin. A simple test query; <--->
 
 // tags
 <cfquery name="myQuery" datasource="cfartgallery">
@@ -54,7 +54,8 @@ Parameter #2(CF_SQL_CHAR) = 2
 Parameter #3(CF_SQL_CHAR) = 3
 Parameter #4(CF_SQL_CHAR) = 4
 
-Queries can also be cached by adding the tag cachedwithin="#createTimespan(0,1,0,0)#", or result restricted with maxrows="100" <--->
+Queries can also be cached by adding the tag cachedwithin="#createTimespan(0,1,0,0)#", (The structure is; (days,hours,minutes,secondes) so 1 hour in thise case)
+or result restricted with maxrows="100" <--->
 <cfquery name="myQuery" datasource="cfartgallery" maxrows="100">
     SELECT firstname, lastname, email FROM artists
 </cfquery>
