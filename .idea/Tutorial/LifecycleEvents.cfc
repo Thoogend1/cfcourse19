@@ -10,10 +10,10 @@ For example after a reboot <--->
 This request is broadcast after onRequestStart <--->
     function onRequest( string targetPage )
     {
-
         try {
             var targetPage = targetPage;
-        } catch (any e) {
+        }
+        catch (any e) {
 //handle the exception
         }
     }
@@ -24,10 +24,10 @@ Usefull for example to set veriables that should be present on every page in a s
 <!---> onSessionStart code is run every time a user makes a request to or from your application either
 after the user's session has expired, or when they have never used the application before. <--->
 
-<!---> onRequestEnd <--->
+<!---> onRequestEnd code is run when the .cfm file reverts back to the main method.
+Usefull for, for example, terminating priviledges or logging.<--->
 
-<!---> onSessionEnd <--->
-
+<!---> onSessionEnd is code that is executed once the session of the user times out, or is terminated <--->
 
 <!---> onApplicationEnd <--->
 
