@@ -20,6 +20,15 @@ This request is broadcast after onRequestStart <--->
 
 <!---> onRequestStart code is run before every request the application sends.
 Usefull for example to set veriables that should be present on every page in a site. <--->
+    function onRequestStart( string targetPage )
+    {
+        try {
+            var targetPage = targetPage;
+        }
+        catch (any e) {
+//handle the exception
+        }
+    }
 
 <!---> onSessionStart code is run every time a user makes a request to or from your application either
 after the user's session has expired, or when they have never used the application before. <--->
@@ -32,6 +41,6 @@ Usefull for, for example, terminating priviledges or logging. <--->
 <!---> onApplicationEnd code is broadcast when the application times out or shuts down.
 You don't usually do this unless an application is no longer used, or is about to be upgraded or restarted. <--->
 
-<!---> onError code is boradcast in the event of an un-caught exception, including any you may throw manually.
+<!---> onError code is broadcast in the event of an un-caught exception, including any you may throw manually.
 You can use/abuse this as a last line of defense for errors that might have slipped into production. <--->
 }
