@@ -25,11 +25,13 @@ Usefull for example to set veriables that should be present on every page in a s
 after the user's session has expired, or when they have never used the application before. <--->
 
 <!---> onRequestEnd code is run when the .cfm file reverts back to the main method.
-Usefull for, for example, terminating priviledges or logging.<--->
+Usefull for, for example, terminating priviledges or logging. <--->
 
-<!---> onSessionEnd is code that is executed once the session of the user times out, or is terminated <--->
+<!---> onSessionEnd code is executed once the session of the user times out, or is terminated. <--->
 
-<!---> onApplicationEnd <--->
+<!---> onApplicationEnd code is broadcast when the application times out or shuts down.
+You don't usually do this unless an application is no longer used, or is about to be upgraded or restarted. <--->
 
-<!---> onError <--->
+<!---> onError code is boradcast in the event of an un-caught exception, including any you may throw manually.
+You can use/abuse this as a last line of defense for errors that might have slipped into production. <--->
 }
