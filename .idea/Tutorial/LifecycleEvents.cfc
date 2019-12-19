@@ -1,5 +1,5 @@
 component {
-<!---> onApplicationStart code that is run at the very first time you start the application.
+<!---> onApplicationStart code is run at the very first time you start the application.
 For example after a reboot <--->
     function onApplicationStart(){
         application.datasource = "my_database";
@@ -26,7 +26,7 @@ Usefull for example to set veriables that should be present on every page in a s
             var targetPage = targetPage;
         }
         catch (any e) {
-//handle the exception
+//code to handle the exception
         }
     }
 
@@ -38,7 +38,7 @@ after the user's session has expired, or when they have never used the applicati
         return true;
     }
 
-<!---> onRequestEnd code is run when the .cfm file reverts back to the main method.
+<!---> onRequestEnd code is run when the .cfm or .cfc file reverts back to the main method.
 Usefull for, for example, terminating priviledges or logging. <--->
     function OnRequestEnd()
     {
@@ -52,8 +52,12 @@ Usefull for, for example, terminating priviledges or logging. <--->
 
 
 <!---> onApplicationEnd code is broadcast when the application times out or shuts down.
-You don't usually do this unless an application is no longer used, or is about to be upgraded or restarted. <--->
+This code isn't usually run unless the application is no longer used, or is about to be upgraded or restarted.
+You can forexample write contents of variables or datasources that are cached to a file.<--->
+
 
 <!---> onError code is broadcast in the event of an un-caught exception, including any you may throw manually.
 You can use/abuse this as a last line of defense for errors that might have slipped into production. <--->
+
+
 }
