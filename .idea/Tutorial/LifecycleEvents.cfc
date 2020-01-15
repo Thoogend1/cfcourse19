@@ -49,7 +49,12 @@ Usefull for, for example, terminating priviledges or logging. <--->
     }
 
 <!---> onSessionEnd code is executed once the session of the user times out, or is terminated. <--->
-
+    function OnSessionEnd()
+    {
+        cfdump.var = "#appliation#";
+        label = 'onSessionEnd';
+        cfreturn = true;
+    }
 
 <!---> onApplicationEnd code is broadcast when the application times out or shuts down.
 This code isn't usually run unless the application is no longer used, or is about to be upgraded or restarted.
