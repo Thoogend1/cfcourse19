@@ -59,7 +59,26 @@ Usefull for, for example, terminating priviledges or logging. <--->
 <!---> onApplicationEnd code is broadcast when the application times out or shuts down.
 This code isn't usually run unless the application is no longer used, or is about to be upgraded or restarted.
 You can forexample write contents of variables or datasources that are cached to a file.<--->
+    function OnApplicationEnd()
+    {
+        name = "onApplicationEnd";
+        access = "public";
+        returntype = "void";
+        output = "false";
+        hint = "I tear down the application.";
 
+            <!--- Define arguments. --->
+            cfargument.name = "applicationScope";
+            type = "any";
+            scope.required ="true";
+            hint = "I am the application scope.";
+
+
+            <!--- Log the application length. --->
+            cfdump.var="#arguments.applicationScope.dateInitialized# : #now()#";
+            output="#expandPath( './log.htm' )#";
+            format="html";
+     }
 
 <!---> onError code is broadcast in the event of an un-caught exception, including any you may throw manually.
 You can use/abuse this as a last line of defense for errors that might have slipped into production. <--->
