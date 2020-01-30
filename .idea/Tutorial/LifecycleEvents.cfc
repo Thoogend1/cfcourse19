@@ -78,10 +78,12 @@ You can forexample write contents of variables or datasources that are cached to
             cfdump.var="#arguments.applicationScope.dateInitialized# : #now()#";
             output="#expandPath( './log.htm' )#";
             format="html";
-     }
+    }
 
 <!---> onError code is broadcast in the event of an un-caught exception, including any you may throw manually.
 You can use/abuse this as a last line of defense for errors that might have slipped into production. <--->
-
-
+    function onError( any e ){
+        writeDump( var=e, label="Primary error" );
+    abort;
+    }
 }
